@@ -77,7 +77,7 @@ static DWORD get_wechat_pid()
 static std::optional<std::string> get_wechat_path()
 {
     HKEY hKey;
-    // if (RegOpenKeyExA(HKEY_CURRENT_USER, "Software\\Tencent\\WeChat", 0, KEY_READ, &hKey) != ERROR_SUCCESS) {
+    // 1if (RegOpenKeyExA(HKEY_CURRENT_USER, "Software\\Tencent\\WeChat", 0, KEY_READ, &hKey) != ERROR_SUCCESS) {
     if (RegOpenKeyExA(HKEY_CURRENT_USER, "Software\\Tencent\\Weixin", 0, KEY_READ, &hKey) != ERROR_SUCCESS) {
         LOG_ERROR("无法打开注册表项");
         return std::nullopt;
